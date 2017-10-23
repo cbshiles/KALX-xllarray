@@ -1,0 +1,49 @@
+<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <introduction>
+    <para></para>
+  </introduction>
+  <introduction>
+    <para>Functions that operate on arrays of numbers.</para>
+  </introduction>
+  <section>
+    <title>Introduction</title>
+    <content>
+      <para>
+        The Array module uses Excel's built-in two dimensional numeric datatype to get the highest possible performance 
+        for array manipulation. The functions and commands in this module are strongly influenced by the family of languages 
+        starting from 
+        <externalLink>
+          <linkText>Kenneth E. Iverson</linkText>
+          <linkUri>http://en.wikipedia.org/wiki/Kenneth_E._Iverson</linkUri>
+          <linkAlternateText>Kenneth E. Iverson</linkAlternateText>
+        </externalLink>
+        's APL and by 
+        <externalLink>
+          <linkText>Alexander Stepanov</linkText>
+          <linkUri>http://en.wikipedia.org/wiki/Alexander_Stepanov</linkUri>
+          <linkAlternateText>Alexander Stepanov</linkAlternateText>
+        </externalLink>
+        's C++ Standard Template Library.
+      </para>
+    </content>
+  </section>
+  <section>
+    <title>Overview</title>
+    <content>
+      <para>
+        Excel arrays are two dimensional arrays of 64-bit floating point numbers. This module makes it possible to 
+        create handles to in-memory arrays and provides functions to manipulate both standard Excel arrays and in-memory arrays. 
+      </para>
+      <para>
+        Use <codeInline>ARRAY.SET(Array)</codeInline> to create a handle to a copy of <codeInline>Array</codeInline>. 
+        Most <codeInline>ARRAY.*</codeInline> functions take either an array or a handle to an array as the first argument. 
+        If the first argument is an array, then the function has the usual Excel semantics: it is a pure function with no side effects. 
+        If the first argument is a handle, then the function acts on the in-memory array and returns a handle to the modified array. 
+        Care must be taken to ensure proper calculation order when using handles. Use <codeInline>DEPENDS</codeInline> to do this. 
+        The function <codeInline>ARRAY.GET(Handle)</codeInline> fetches the in-memory array corresponding to 
+        <codeInline>Handle</codeInline>. Use this to pass an array to build-in Excel array functions.
+      </para>
+    </content>
+  </section>
+  <relatedTopics/>
+</developerConceptualDocument>
